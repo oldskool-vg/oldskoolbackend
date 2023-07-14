@@ -17,4 +17,8 @@ public class CardService {
   public List<Card> allCards() { // return a list of cards using allCards method. See controller where we call this method 'getallcards' to match with the get mapping phrase.
     return cardRepository.findAll();
   }
+
+  public Card oneCard(String name) {
+    return cardRepository.findByName(name).orElseThrow(() -> new RuntimeException(String.format("Cannot find card by name %s", name)));
+  }
 }
