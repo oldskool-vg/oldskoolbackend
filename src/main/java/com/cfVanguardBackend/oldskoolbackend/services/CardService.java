@@ -1,6 +1,7 @@
 package com.cfVanguardBackend.oldskoolbackend.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,12 @@ public class CardService {
     return cardRepository.findAll();
   }
 
-  public Card oneCard(String name) {
-    return cardRepository.findByName(name).orElseThrow(() -> new RuntimeException(String.format("Cannot find card by name %s", name)));
+  // public Card oneCard(String name) {
+  //   return cardRepository.findByName(name).orElseThrow(() -> new CardNotFoundException(name)));
+  // }
+
+  public Optional<Card> oneCard(String name) {
+    return cardRepository.findByName(name);
   }
+
 }

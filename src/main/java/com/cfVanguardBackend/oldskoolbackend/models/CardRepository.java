@@ -11,7 +11,8 @@ import org.springframework.stereotype.Repository;
 // the CardRepo interface extends the repo we have in mongo, and we have to parameterize it with <...> to tell it what type of object we're working with. In this case, we're working with the Card model, so we pass in Card. The second parameter is the type of the ID field, which is an ObjectId in this case.
 @Repository
 public interface CardRepository extends MongoRepository<Card, ObjectId> {
-  @Query("{name: ?0}")
+  // automatic queries let you write your own method based on the properties that you have in your model. The method name has to follow a specific format: findBy<property name>. So if you want to find a card by name, you would write a method called findByName. If you want to find a card by grade, you would write a method called findByGrade. If you want to find a card by clan, you would write a method called findByClan. You get the idea.
+  @Query("{name: ?0}") // you can have multiple query params, so if you wanted a second one, you would write ?1, and so on.
   Optional<Card> findByName(String name);
 }
 
