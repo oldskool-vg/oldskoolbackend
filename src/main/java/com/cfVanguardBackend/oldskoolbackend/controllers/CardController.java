@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cfVanguardBackend.oldskoolbackend.exceptions.CardNotFoundException;
 import com.cfVanguardBackend.oldskoolbackend.models.Card;
 import com.cfVanguardBackend.oldskoolbackend.services.CardService;
 
@@ -25,8 +26,12 @@ public class CardController {
   }
 
   // get a single card by its name
+  // @GetMapping("/cards/{name}")
+  // public ResponseEntity<Card> getCardByName(@PathVariable String name) {
+  //   return ResponseEntity.of(Optional.ofNullable(cardService.oneCard(name)));
+  // }
   @GetMapping("/cards/{name}")
   public ResponseEntity<Card> getCardByName(@PathVariable String name) {
-    return ResponseEntity.of(Optional.ofNullable(cardService.oneCard(name)));
+    return ResponseEntity.of((cardService.oneCard(name)));
   }
 }
