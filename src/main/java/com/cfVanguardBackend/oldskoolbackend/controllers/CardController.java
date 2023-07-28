@@ -8,9 +8,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cfVanguardBackend.oldskoolbackend.models.Card;
+import com.cfVanguardBackend.oldskoolbackend.models.CardRequest;
 import com.cfVanguardBackend.oldskoolbackend.services.CardService;
 
 @RestController
@@ -32,5 +35,10 @@ public class CardController {
     // This commented out return was not producing a 404 if not found: was returning null with 200
     // return ResponseEntity.of(Optional.ofNullable(cardService.oneCard(name)));
     return ResponseEntity.of((cardService.oneCard(name)));
+  }
+
+  @PostMapping("/cards")
+  public void postCardByName(@RequestBody CardRequest cardRequest) {
+    cardService.addCard(cardRequest.getId());
   }
 }
