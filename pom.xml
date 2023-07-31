@@ -47,6 +47,12 @@
 			<version>4.0.0</version>
 		</dependency>
 
+		<!-- dependency for WebClient -->
+		<dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-webflux</artifactId>
+    </dependency>
+
 		<!-- <dependency>
       <groupId>io.mongock</groupId>
       <artifactId>mongock-bom</artifactId>
