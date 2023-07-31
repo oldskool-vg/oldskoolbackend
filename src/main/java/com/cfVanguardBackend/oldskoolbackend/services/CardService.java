@@ -3,10 +3,12 @@ package com.cfVanguardBackend.oldskoolbackend.services;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Future;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.cfVanguardBackend.oldskoolbackend.models.Card;
+import com.cfVanguardBackend.oldskoolbackend.models.Card2;
 import com.cfVanguardBackend.oldskoolbackend.models.CardRepository;
 // import com.cfVanguardBackend.oldskoolbackend.exceptions.CardNotFoundException;
 
@@ -35,9 +37,11 @@ public class CardService {
   // have a method on our Card service that, when we want to add a new card, will use the api class to get the card from the external api and then save it to our database.
   public void addCard(String id) {
     // cardRepository.save(vanguardAPI.getCard(id));
-    CompletableFuture<Card> future = CompletableFuture.supplyAsync(() -> vanguardAPI.getCard(id));
 
+    CompletableFuture<Card> future = CompletableFuture.supplyAsync(() -> vanguardAPI.fetchCard(id));
     future.thenAccept(card -> System.out.println(card));
+    // vanguardAPI.fetchCard(id);
+
   }
 
 }
