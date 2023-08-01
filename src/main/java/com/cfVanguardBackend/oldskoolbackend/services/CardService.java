@@ -8,7 +8,6 @@ import java.util.concurrent.Future;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.cfVanguardBackend.oldskoolbackend.models.Card;
-import com.cfVanguardBackend.oldskoolbackend.models.Card2;
 import com.cfVanguardBackend.oldskoolbackend.models.CardRepository;
 // import com.cfVanguardBackend.oldskoolbackend.exceptions.CardNotFoundException;
 
