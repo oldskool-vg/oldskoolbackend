@@ -22,7 +22,7 @@ public class Card {
   private ObjectId _id;
   private String name;
   private String grade;
-  private String cardType;
+  private String cardtype;
   private Short power;
   private Short shield;
   private String skill;

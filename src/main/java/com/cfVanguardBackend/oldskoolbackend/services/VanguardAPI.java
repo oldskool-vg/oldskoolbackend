@@ -6,7 +6,6 @@ import java.util.concurrent.CompletableFuture;
 import org.springframework.stereotype.Service;
 
 import com.cfVanguardBackend.oldskoolbackend.models.Card;
-import com.cfVanguardBackend.oldskoolbackend.models.Card2;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import kong.unirest.JsonNode;
