@@ -1,0 +1,37 @@
+{
+  "name": "List of Promo Cards",
+  "cards": [
+    {"id":751,"name":"Beaker Holstein"},
+    {"id":5121,"name":"Knight of the Steel Blade, Caradoc"},
+    {"id":2772,"name":"Dragonic Vanisher"},
+    {"id":2022,"name":"Cycling Actor"},
+    {"id":4433,"name":"Holy Disaster Dragon"},
+    {"id":3390,"name":"Exile Dragon"},
+    {"id":8984,"name":"Sword Emperor, Dragonic Valblade"},
+    {"id":3243,"name":"Epitome of Knowledge, Silvest"},
+    {"id":9101,"name":"The Dark Dictator"},
+    {"id":136,"name":"Alfred Early"},
+    {"id":5381,"name":"Lion Mane Stallion"},
+    {"id":2778,"name":"Dragonic Waterfall"},
+    {"id":925,"name":"Blackmane Witch"},
+    {"id":8136,"name":"Stamp Sea Otter"},
+    {"id":2096,"name":"Dark Lord of Pale Moon"},
+    {"id":5143,"name":"Knight Squire, Allen"},
+    {"id":721,"name":"Battle Sister, Omelet"},
+    {"id":6309,"name":"No Life King, Death Anchor"},
+    {"id":5210,"name":"Land Battle Support Type, Enigship"},
+    {"id":4171,"name":"Guardian of the Skies, Night Griffon"},
+    {"id":7506,"name":"Scale Dragon of the Magma Cave"},
+    {"id":9722,"name":"Wingal"},
+    {"id":5148,"name":"Knowledge Drunkard"},
+    {"id":4392,"name":"High Dog Breeder, Seiran"},
+    {"id":2870,"name":"Dragon Undead, Skull Dragon"},
+    {"id":4982,"name":"Knight of Endurance, Lucan"},
+    {"id":4919,"name":"King Seahorse"},
+    {"id":9295,"name":"Triple Dark Armor"},
+    {"id":3652,"name":"Flirtatious Succubus"},
+    {"id":9891,"name":"Wyvern Strike, Plajuri"},
+    {"id":8063,"name":"Sphere Magus"}
+  ]
+}
+
