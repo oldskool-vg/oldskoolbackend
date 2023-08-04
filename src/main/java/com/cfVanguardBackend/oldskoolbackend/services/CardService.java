@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.cfVanguardBackend.oldskoolbackend.models.Card;
 import com.cfVanguardBackend.oldskoolbackend.models.CardRepository;
-// import com.cfVanguardBackend.oldskoolbackend.exceptions.CardNotFoundException;
 
 // Inside this class will be the database access logic for the Card model, which is tied to our Mongo repository now.
 @Service
@@ -25,7 +24,7 @@ public class CardService {
   }
 
   public Optional<Card> oneCard(String name) {
-    // return cardRepository.findByName(name).orElseThrow(() -> new CardNotFoundException(name)));
+    // return cardRepository.findByName(name).orElseThrow(() -> new CardNotFoundException(name));
     return cardRepository.findByName(name);
   }
 
