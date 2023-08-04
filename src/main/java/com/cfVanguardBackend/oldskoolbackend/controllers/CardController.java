@@ -1,8 +1,12 @@
 package com.cfVanguardBackend.oldskoolbackend.controllers;
 
+import java.io.FileReader;
 import java.util.List;
 import java.util.Optional;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cfVanguardBackend.oldskoolbackend.models.Card;
 import com.cfVanguardBackend.oldskoolbackend.models.CardRequest;
 import com.cfVanguardBackend.oldskoolbackend.services.CardService;
+
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
@@ -37,8 +42,38 @@ public class CardController {
     return ResponseEntity.of((cardService.oneCard(name)));
   }
 
-  @PostMapping("/cards")
+  @PostMapping("/admin/manualinsert/cards")
   public void postCardByName(@RequestBody CardRequest cardRequest) {
     cardService.addCard(cardRequest.getId());
+  }
+
+  @PostMapping("/admin/testrun")
+  public void testRun() {
+    JSONParser parser = new JSONParser();
+
+    // try {
+    //   Object obj = parser.parse(new FileReader("src/main/java/com/cfVanguardBackend/oldskoolbackend/jsonData/LegalPromos.json"));
+    //   JSONObject object = (JSONObject) obj;
+    //   JSONArray cardList = (JSONArray) object.get("cards");
+    //   for (int i = 0; i < cardList.size(); i++) {
+    //     JSONObject card = (JSONObject) cardList.get(i);
+    //     System.out.println(card.get("id"));
+    //     cardService.addCard(String.valueOf(card.get("id")));
+    //   }
+    // } catch (Exception e) {
+    //   e.printStackTrace();
+    // }
+    try {
+      Object obj = parser.parse(new FileReader("src/main/java/com/cfVanguardBackend/oldskoolbackend/jsonData/allCards.json"));
+      JSONObject object = (JSONObject) obj;
+      JSONArray cardList = (JSONArray) object.get("cards");
+      for (int i = 0; i < cardList.size(); i++) {
+        JSONObject card = (JSONObject) cardList.get(i);
+        System.out.println(card.get("id"));
+        cardService.addCard(String.valueOf(card.get("id")));
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 }
