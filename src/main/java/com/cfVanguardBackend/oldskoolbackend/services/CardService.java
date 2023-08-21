@@ -7,9 +7,9 @@ import java.util.concurrent.CompletableFuture;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cfVanguardBackend.oldskoolbackend.Scheduler.DailyCardService;
 import com.cfVanguardBackend.oldskoolbackend.models.Card;
 import com.cfVanguardBackend.oldskoolbackend.models.CardRepository;
+import com.cfVanguardBackend.oldskoolbackend.services.Scheduler.DailyCardService;
 
 @Service
 public class CardService {
