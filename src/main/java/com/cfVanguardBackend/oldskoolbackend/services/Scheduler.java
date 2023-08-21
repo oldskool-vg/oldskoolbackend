@@ -1,4 +1,4 @@
-package com.cfVanguardBackend.oldskoolbackend;
+package com.cfVanguardBackend.oldskoolbackend.services;
 
 import java.io.FileReader;
 import java.util.concurrent.ThreadLocalRandom;
